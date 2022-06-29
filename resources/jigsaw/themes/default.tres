@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://btoyv1i65jet8"]
+
+[ext_resource type="FontData" uid="uid://cx0qss1kwbdmn" path="res://resources/jigsaw/fonts/MinecraftRegular.otf" id="1_v4cvs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_minqe"]
+bg_color = Color(0.160784, 0.160784, 0.25098, 1)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0627451, 0.0627451, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eou2p"]
+bg_color = Color(0.160784, 0.160784, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(0.0627451, 0.0627451, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vubme"]
+bg_color = Color(0.129412, 0.129412, 0.2, 1)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 1
+border_color = Color(0.0627451, 0.0627451, 0.0980392, 1)
+
+[sub_resource type="Font" id="Font_juauo"]
+data/0 = ExtResource( "1_v4cvs" )
+
+[resource]
+default_font = SubResource( "Font_juauo" )
+HBoxContainer/constants/separation = 0
+StatusBar/styles/panel = SubResource( "StyleBoxFlat_minqe" )
+TitleBar/styles/panel = SubResource( "StyleBoxFlat_eou2p" )
+VBoxContainer/constants/separation = 0
+WorkSpace/styles/panel = SubResource( "StyleBoxFlat_vubme" )

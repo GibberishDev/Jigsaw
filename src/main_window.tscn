@@ -1,0 +1,186 @@
+[gd_scene load_steps=18 format=3 uid="uid://ddatfw8x1xlot"]
+
+[ext_resource type="Theme" uid="uid://btoyv1i65jet8" path="res://resources/jigsaw/themes/default.tres" id="1_3hgh1"]
+[ext_resource type="Script" path="res://src/main_window_scripts/TitleBar.gd" id="2_r4eyx"]
+[ext_resource type="Texture2D" uid="uid://jlbrpc7sqvrk" path="res://resources/jigsaw/textures/TitleBarButtons.png" id="3_h3gt2"]
+[ext_resource type="Script" path="res://src/main_window_scripts/MinimizeBtn.gd" id="3_ho3cd"]
+[ext_resource type="Script" path="res://src/main_window_scripts/CloseBtn.gd" id="3_lgdw2"]
+[ext_resource type="Script" path="res://src/main_window_scripts/FullscreenBtn.gd" id="3_v6qj3"]
+[ext_resource type="Script" path="res://src/main_window_scripts/ResizeBtn.gd" id="7_7m0s3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6upx"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(0, 0, 64, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri0u0"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(0, 26, 64, 26)
+
+[sub_resource type="InputEventAction" id="InputEventAction_cdmu8"]
+action = &"gui.maximize"
+
+[sub_resource type="Shortcut" id="Shortcut_lpaxq"]
+events = [SubResource( "InputEventAction_cdmu8" )]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6djfg"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(64, 0, 64, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1c3l"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(64, 26, 64, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87xxg"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(192, 0, 64, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcd64"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(192, 26, 64, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yo5f"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(159, 12, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6cve"]
+atlas = ExtResource( "3_h3gt2" )
+region = Rect2(159, 38, 14, 14)
+
+[node name="MainWindow" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( "1_3hgh1" )
+
+[node name="splitter" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TitleBar" type="Control" parent="splitter"]
+minimum_size = Vector2(0, 26)
+offset_right = 1024.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource( "2_r4eyx" )
+
+[node name="BG" type="Panel" parent="splitter/TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( "1_3hgh1" )
+theme_type_variation = &"TitleBar"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="splitter/TitleBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DragHitbox" type="Control" parent="splitter/TitleBar/HBoxContainer"]
+offset_right = 830.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="splitter/TitleBar/HBoxContainer/DragHitbox"]
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = 268.0
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0.0627451, 0.0627451, 0.0980392, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "Jigsaw  -  %project.name%"
+vertical_alignment = 1
+
+[node name="MinimizeBtn" type="TextureButton" parent="splitter/TitleBar/HBoxContainer"]
+minimum_size = Vector2(64, 0)
+offset_left = 830.0
+offset_right = 894.0
+offset_bottom = 26.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"CloseBtn"
+texture_normal = SubResource( "AtlasTexture_a6upx" )
+texture_pressed = SubResource( "AtlasTexture_a6upx" )
+texture_hover = SubResource( "AtlasTexture_ri0u0" )
+script = ExtResource( "3_ho3cd" )
+
+[node name="FullscreenBtn" type="TextureButton" parent="splitter/TitleBar/HBoxContainer"]
+minimum_size = Vector2(64, 0)
+offset_left = 894.0
+offset_right = 958.0
+offset_bottom = 26.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"CloseBtn"
+shortcut = SubResource( "Shortcut_lpaxq" )
+texture_normal = SubResource( "AtlasTexture_6djfg" )
+texture_pressed = SubResource( "AtlasTexture_6djfg" )
+texture_hover = SubResource( "AtlasTexture_o1c3l" )
+script = ExtResource( "3_v6qj3" )
+
+[node name="CloseBtn" type="TextureButton" parent="splitter/TitleBar/HBoxContainer"]
+minimum_size = Vector2(64, 0)
+offset_left = 958.0
+offset_right = 1022.0
+offset_bottom = 26.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"CloseBtn"
+texture_normal = SubResource( "AtlasTexture_87xxg" )
+texture_pressed = SubResource( "AtlasTexture_87xxg" )
+texture_hover = SubResource( "AtlasTexture_lcd64" )
+script = ExtResource( "3_lgdw2" )
+
+[node name="WorkSpace" type="Control" parent="splitter"]
+offset_top = 26.0
+offset_right = 1024.0
+offset_bottom = 574.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="Panel" parent="splitter/WorkSpace"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_type_variation = &"WorkSpace"
+
+[node name="statusBar" type="Control" parent="splitter"]
+minimum_size = Vector2(0, 26)
+offset_top = 574.0
+offset_right = 1024.0
+offset_bottom = 600.0
+
+[node name="BG" type="Panel" parent="splitter/statusBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_type_variation = &"StatusBar"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="splitter/statusBar"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="StatusLabel" type="Label" parent="splitter/statusBar/HBoxContainer"]
+offset_right = 1010.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ResizeBtn" type="TextureButton" parent="splitter/statusBar/HBoxContainer"]
+minimum_size = Vector2(14, 14)
+offset_left = 1010.0
+offset_top = 12.0
+offset_right = 1024.0
+offset_bottom = 26.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
+texture_normal = SubResource( "AtlasTexture_8yo5f" )
+texture_pressed = SubResource( "AtlasTexture_i6cve" )
+texture_hover = SubResource( "AtlasTexture_i6cve" )
+script = ExtResource( "7_7m0s3" )
+
+[connection signal="gui_input" from="splitter/TitleBar/HBoxContainer/DragHitbox" to="splitter/TitleBar" method="dragHitboxMouseInput"]
+[connection signal="button_up" from="splitter/TitleBar/HBoxContainer/MinimizeBtn" to="splitter/TitleBar/HBoxContainer/MinimizeBtn" method="onPress"]
+[connection signal="button_up" from="splitter/TitleBar/HBoxContainer/FullscreenBtn" to="splitter/TitleBar/HBoxContainer/FullscreenBtn" method="onPress"]
+[connection signal="button_up" from="splitter/TitleBar/HBoxContainer/CloseBtn" to="splitter/TitleBar/HBoxContainer/CloseBtn" method="onPress"]
+[connection signal="gui_input" from="splitter/statusBar/HBoxContainer/ResizeBtn" to="splitter/statusBar/HBoxContainer/ResizeBtn" method="onInput"]
