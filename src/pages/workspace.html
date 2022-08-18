@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en_us">
+    <head>
+        <title>Jigsaw</title>
+        <link rel="stylesheet" href="../../src/styles/default-theme.css">
+        <link rel="icon" href="../../assets/images/code_cube.svg">
+    </head>
+    <body>
+        <div id="titlebar">
+            <div id="logo">
+                <img class="logo-img" src="../../assets/images/code_cube.svg" alt="logo">
+            </div>
+            <div class="titlebar-button" id="file-titlebar-button">File
+                <div class="dropdown-container">
+                    <div class="dropdown-option">Option 1</div>
+                    <div class="dropdown-option">Option 2</div>
+                    <div class="dropdown-separator"></div>
+                    <div class="dropdown-option">Option 3</div>
+                    <div class="dropdown-option">Option 4</div>
+                </div>
+            </div>
+            <div class="titlebar-button" id="edit-titlebar-button">Edit
+                <div class="dropdown-container">
+                    <div class="dropdown-option">Option 1</div>
+                    <div class="dropdown-option">Option 2</div>
+                    <div class="dropdown-separator"></div>
+                    <div class="dropdown-option">Option 3</div>
+                    <div class="dropdown-option">Option 4</div>
+                </div>
+            </div>
+            <div class="titlebar-button" id="view-titlebar-button">View
+                <div class="dropdown-container">
+                    <div class="dropdown-option">Option 1</div>
+                    <div class="dropdown-option">Option 2</div>
+                    <div class="dropdown-separator"></div>
+                    <div class="dropdown-option">Option 3</div>
+                    <div class="dropdown-option">Option 4</div>
+
+                </div>
+            </div>
+            <div class="titlebar-button" id="help-titlebar-button">Help
+                <div class="dropdown-container">
+                    <div class="dropdown-option">Option 1</div>
+                    <div class="dropdown-option">Option 2</div>
+                    <div class="dropdown-separator"></div>
+                    <div class="dropdown-option">Option 3</div>
+                    <div class="dropdown-option">Option 4</div>
+
+                </div>
+            </div>
+            <div class="label">%project-name% - Jigsaw</div>
+            <div class="minimize-button" id="minimize"><img src="../../assets/images/minimize-btn.png" alt="minimize"></div>
+            <div class="maximize-button" id="maximize"><img src="../../assets/images/maximize-btn.png" alt="maximize"></div>
+            <div class="close-button" id="close"><img src="../../assets/images/close-btn.png" alt="close"></div>
+        </div>
+        <div id="wrapper">
+            <div id="sidebar">
+            </div>
+            <div id="project-view">
+            </div>
+            <div id="project-view-resizer">
+                <img id="project-view-resizer-image" src="../../assets/images/drag-icon.png" alt="">
+            </div>
+            <div id="workspace">
+                <div id="tab-container">
+                    <div class="tab">Tab 1</div>
+                    <div class="tab">Tab 2</div>
+                    <div class="tab" id="selected">Tab 3</div>
+                    <div class="tab">Tab 4</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                    <div class="tab">Tab Infinity</div>
+                </div>
+                <div id="breadcrumbs">
+                </div>
+                <div id="file-container">
+                    <div class="no-file" data-tilt data-tilt-reverse="true">
+                    </div>
+                    <div id="file">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="statusbar">
+        </div>
+        <div><!--SCRIPTS-->
+            <script src="../scripts/project-view-resizer.js" defer></script>
+            <script src="../scripts/scroll-shadows.js" defer></script>
+            <script src="../scripts/title-bar-dropdown.js" defer></script>
+            <script src="../scripts/window-control-buttons.js" defer></script>
+            <script src="../scripts/horizontal-scroll-tab-container.js" defer></script>
+        </div>
+    </body>
+</html>

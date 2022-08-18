@@ -1,0 +1,14 @@
+{
+  "name": "jigsaw",
+  "version": "1.0.0",
+  "description": "Minecraft Recipe Geerator with modding compat.",
+  "main": "src/scripts/backend/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "GibbDev",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "electron": "^19.0.9"
+  }
+}
