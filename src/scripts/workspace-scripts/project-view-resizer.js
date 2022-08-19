@@ -1,6 +1,6 @@
-var resizer_img = document.getElementById('project-view-resizer-image'); 
-var resizer_btn = document.getElementById('project-view-resizer');
-var resize_itm = document.getElementById('project-view');
+var resizer_img = document.getElementById('project-tree-view-resizer-image'); 
+var resizer_btn = document.getElementById('project-tree-view-resizer');
+var resize_itm = document.getElementById('project-tree-view');
 var newWidth;
 var mouseXChange;
 
@@ -30,6 +30,7 @@ const mouseDoubleClick = function() {
 }
 
 const mouseBtnDown = function (e) {
+    console.log('a')
     mouseX = e.clientX;
     startingWidth = resize_itm.getBoundingClientRect().width;
     document.addEventListener('mousemove', resize);
