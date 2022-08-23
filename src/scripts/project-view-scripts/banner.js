@@ -1,6 +1,6 @@
 // Scrapped code due to shitty accesibility >.>
 let banner = document.getElementById('banner');
-let recentProjects = document.getElementById('recent-projects-scroll-container');
+let recentProjects = document.getElementById('project-list-scroll-container');
 
 recentProjects.addEventListener('wheel', (e) => {
   if (recentProjects.scrollTop == 0 && e.deltaY > 0) {

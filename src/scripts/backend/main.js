@@ -18,12 +18,11 @@ app.on("ready", function(){
 			webSecurity: true,
 			nodeIntegration: true,
 			contextIsolation: true,
-			enableRemoteModule: true,
       // devtools: false,
       preload: path.join(__dirname, "preload.js"),
 		}
   });
-  mainWindow.loadFile(path.join(app.getAppPath(), "src/pages/project-view.html"));
+  mainWindow.loadFile(path.join(app.getAppPath(), "src/pages/workspace.html"));
 })
 
 // webFrame.on('ready', function(){

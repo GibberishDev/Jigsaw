@@ -234,12 +234,8 @@ Houses all the content and usually visible only as background.
 Used to give size to content inside of it*/
 #wrapper{
   height: calc(100vh - 60px);
-
   background-color: var(--color-darkest);
-
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 /* STATUSBAR STYLING
@@ -256,19 +252,19 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
 
 /* STYLING FOR WORKSPACE. This styling applies to workspace stage of app.  */
 
-
 #sidebar {
   background-color: var(--color-light);
   width: 48px;
-  min-width: 48px;
   max-width: 48px;
+  min-width: 48px;
 }
 
 #project-tree-view{
   background-color: var(--color-darkest);
   width: var(--default-project-view-width);
-  max-width: 512px;
   resize: horizontal;
+  max-width: 80%;
+  flex: 0 0 auto;
 }
 
 #project-tree-view-resizer {
@@ -280,6 +276,7 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
   width: 6px;
   cursor: col-resize;
   user-select: none;
+
 }
 #project-tree-view-resizer:hover {
   background-color: var(--color-light);
@@ -293,25 +290,24 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
 
 #workspace {
   background-color: var(--color-dark);
-  flex-grow: 1;
 
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
-
+  overflow-x: hidden;
 }
 
 #tab-container {
   background-color: var(--color-light);
   height: 32px;
-  max-width: 100%;
 
   display: flex;
   flex-direction: row;
   justify-content: start;
 
   overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-gutter: 2px;
 }
 #tab-container::-webkit-scrollbar {
@@ -353,18 +349,44 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
 }
 
 #breadcrumbs {
+  font-family: 'NovaSquareRegular';
+  font-size: 14px;
   background-color: var(--color-dark);
   height: 16px;
   width: calc(100% - 16px);
   flex-grow: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  user-select: none;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.breadcrumbs-text {
+  max-width: 256px;
+  overflow: hidden;
+  padding-left: 6px;
+  padding-right: 6px;
+  color: var(--color-text);
+}
+.breadcrumbs-text:hover {
+  color: var(--color-text-highlight);
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
+
+.breadcrumbs-separator {
+  color: var(--color-text);
 }
 
 #file-container {
   background-color: rgba(0, 0, 0, 0);
   flex-grow: 1;
   overflow-y: auto;
-  transition: cubic-bezier(.45,.18,.4,1.9);
-  transition-duration: 100ms;
+  transition-duration: 200ms;
   box-shadow: inset 0 0px 0px 0px var(--color-darkest), inset 0 0px 0px 0px var(--color-darkest);
 }
 #file-container.top-shadow {
@@ -377,14 +399,12 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
   box-shadow: inset 0 6px 4px -3px var(--color-darkest), inset 0 -6px 4px -3px var(--color-darkest);
 }
 #file-container::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 #file-container::-webkit-scrollbar-track {
-  border-left: 1px solid var(--color-light);
   background-color: var(--color-dark);
 }
 #file-container::-webkit-scrollbar-thumb {
-  border-left: 1px solid var(--color-light);
   background-color: var(--color-base);
 }
 #file-container::-webkit-scrollbar-thumb:hover {
@@ -397,30 +417,35 @@ Holds styling for screen for project selection screen
 Obviously inspired by blockbench >.> */
 
 /* Container ofr project view content */
-#project-view-sections {
-  background-color: var(--color-dark);
-  height: 95%;
-  width: 1392px; /*default for 1920px wide window*/
+#project-view-scroll-container {
   margin: auto;
-  overflow: hidden;
+  max-height: 95%;
+  width: 100%;
+  background-color: transparent;
   overflow-y: auto;
+}
+#project-view-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+#project-view-scroll-container::-webkit-scrollbar-track {
+  color: transparent;
+}
+#project-view-scroll-container::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 4px;
+  background-color: var(--color-base);
+}
+#project-view-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-light);
+}
 
+#project-view-sections {
+  height: 95%;
+  width: 'determined by script';
+  margin: auto;
   display: grid;
   grid-template-columns: 256px auto;
-  grid-template-rows: min-content;
-}
-#project-view-sections::-webkit-scrollbar {
-  position: absolute;
-  left: 8px;
-  width: 8px;
-}
-#project-view-sections::-webkit-scrollbar-thumb {
-  width: 8px;
-  background-color: var(--color-base);
-  transition: 300ms;
-}
-#project-view-sections:hover::-webkit-scrollbar-thumb {
-  background-color: var(--color-light);
+  grid-template-rows: min-content auto;
 }
 
 /* banner image container */
@@ -432,30 +457,18 @@ Obviously inspired by blockbench >.> */
   transition: 100ms;
   transition-timing-function: ease-in;
   overflow: hidden;
+  border-radius: 32px;
 }
 
 #options-container {
-  background-color: var(--color-base);
   height: auto;
-
 }
 
-#recent-projects-scroll-container {
-  background-color: var(--color-dark);
-  height: auto;
-  /* Flips direction to move scrollbar to the right side */
-  direction: rtl;
-  scrollbar-gutter: stable;
-  
-}
+#project-list {
 
-#recent-projects {
-  margin-left: 8px;
-  direction: ltr;
   display: grid;
-  grid-template-columns: repeat(4, 282px);
-  grid-auto-rows: 422px;
-  
+  grid-template-columns: 'determined by script';
+  grid-auto-rows: 240px;
 }
 
 .project-card {
@@ -465,15 +478,15 @@ Obviously inspired by blockbench >.> */
   border-bottom-right-radius: 32px;
   box-sizing: border-box;
   border: solid 2px var(--color-darkest);
-  height: 384px;
-  width: 256px;
+  height: 192px;
+  width: 128px;
   overflow: hidden;
   transition: 250ms;
   color: var(--color-text);
 }
 .project-card:hover {
-  height: 400px;
-  width: 270px;
+  height: 240px;
+  width: 160px;
   border: solid 2px var(--color-text);
   color: var(--color-text-highlight);
 }
@@ -483,10 +496,9 @@ Obviously inspired by blockbench >.> */
 }
 
 .project-card-text {
-  font-size: 20px;
+  font-size: 14px;
   font-family: 'NovaSquareRegular';
-  margin-left: 4px;
-  margin-right: 4px;
+  text-align: center;
 }
 /* END OF PROJECT VIEW STYLING */
 

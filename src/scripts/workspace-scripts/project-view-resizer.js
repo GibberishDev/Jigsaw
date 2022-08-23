@@ -30,7 +30,6 @@ const mouseDoubleClick = function() {
 }
 
 const mouseBtnDown = function (e) {
-    console.log('a')
     mouseX = e.clientX;
     startingWidth = resize_itm.getBoundingClientRect().width;
     document.addEventListener('mousemove', resize);
