@@ -27,11 +27,13 @@ const mouseBtnUp = function () {
 
 const mouseDoubleClick = function() {
     resize_itm.style.width = getComputedStyle(document.body).getPropertyValue('--default-project-view-width');
+    resizer_img.src="../../assets/images/drag-icon.png";
 }
 
 const mouseBtnDown = function (e) {
     mouseX = e.clientX;
     startingWidth = resize_itm.getBoundingClientRect().width;
+    newWidth = startingWidth;
     document.addEventListener('mousemove', resize);
     document.addEventListener('mouseup', mouseBtnUp);
     resizer_btn.addEventListener('dblclick', mouseDoubleClick);

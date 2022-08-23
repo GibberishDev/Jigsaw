@@ -22,7 +22,7 @@ app.on("ready", function(){
       preload: path.join(__dirname, "preload.js"),
 		}
   });
-  mainWindow.loadFile(path.join(app.getAppPath(), "src/pages/workspace.html"));
+  mainWindow.loadFile(path.join(app.getAppPath(), "src/pages/project-view.html"));
 })
 
 // webFrame.on('ready', function(){

@@ -1,5 +1,6 @@
 let projectView = document.getElementById('project-view-sections');
-let projectsContainer = document.getElementById('project-list');
+let projectsRecent = document.getElementById('project-list-recent');
+let projectsPinned = document.getElementById('project-list-pinned');
 
 var width;
 
@@ -10,7 +11,8 @@ function resizeProjectView() {
   var maxWidth = parseInt(width * 0.6);
   maxWidth = maxWidth - (256);
   projectView.style.width = String(Math.max(256 + 160 * 2, (256 + parseInt(maxWidth / 160) * 160))) + 'px'
-  projectsContainer.style.gridTemplateColumns = 'repeat(' + String(Math.max(2, parseInt(maxWidth / 160))) + ', 160px)';
+  projectsRecent.style.gridTemplateColumns = 'repeat(' + String(Math.max(2, parseInt(maxWidth / 160))) + ', 160px)';
+  projectsPinned.style.gridTemplateColumns = 'repeat(' + String(Math.max(2, parseInt(maxWidth / 160))) + ', 160px)';
 }
 
 resizeProjectView();

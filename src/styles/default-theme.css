@@ -103,6 +103,7 @@ I know, shocking */
   padding-left: 8px;
   padding-right: 8px;
   pointer-events: all;
+  cursor: pointer;
 }
 .titlebar-button:hover {
   color: var(--color-text-highlight);
@@ -418,7 +419,10 @@ Obviously inspired by blockbench >.> */
 
 /* Container ofr project view content */
 #project-view-scroll-container {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
   max-height: 95%;
   width: 100%;
   background-color: transparent;
@@ -457,7 +461,8 @@ Obviously inspired by blockbench >.> */
   transition: 100ms;
   transition-timing-function: ease-in;
   overflow: hidden;
-  border-radius: 32px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
 }
 
 #options-container {
@@ -465,7 +470,27 @@ Obviously inspired by blockbench >.> */
 }
 
 #project-list {
+  background-color: var(--color-base);
+  border-bottom-right-radius: 32px;
+  user-select: none;
+}
 
+.project-list-label {
+  color: var(--color-text);
+  font-family: 'Nova Square';
+  font-size: 20px;
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#project-list-recent {
+  display: grid;
+  grid-template-columns: 'determined by script';
+  grid-auto-rows: 240px;
+}
+
+#project-list-pinned {
   display: grid;
   grid-template-columns: 'determined by script';
   grid-auto-rows: 240px;
@@ -474,15 +499,18 @@ Obviously inspired by blockbench >.> */
 .project-card {
   margin: auto;
   background-color: var(--color-base);
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   box-sizing: border-box;
   border: solid 2px var(--color-darkest);
   height: 192px;
   width: 128px;
-  overflow: hidden;
   transition: 250ms;
   color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  cursor: pointer;
 }
 .project-card:hover {
   height: 240px;
@@ -495,10 +523,18 @@ Obviously inspired by blockbench >.> */
   image-rendering: pixelated;
 }
 
-.project-card-text {
+.project-card-content {
+  height: 100%;
   font-size: 14px;
   font-family: 'NovaSquareRegular';
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-text {
+  margin-top: 2px;
+  flex-grow: 1;
 }
 /* END OF PROJECT VIEW STYLING */
 
