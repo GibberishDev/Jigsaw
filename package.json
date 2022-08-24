@@ -4,7 +4,8 @@
   "description": "Minecraft Recipe Geerator with modding compat.",
   "main": "src/scripts/backend/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-packager . --ignore=/.vscode --ignore=/node_modules --ignore=.gitignore"
   },
   "author": "GibbDev",
   "license": "GPL-3.0-or-later",

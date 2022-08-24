@@ -18,12 +18,16 @@ const mouseBtnUp = function () {
     document.removeEventListener('mouseup', mouseBtnUp);
     document.body.style.removeProperty('cursor');
     if (newWidth <= 32) {
-        resize_itm.style.width = '0px';
-        resizer_img.src="../../assets/images/expand-icon.png";
+        foldProjectTreeView()
     } else {
         resizer_img.src="../../assets/images/drag-icon.png";
     }
 };
+
+function foldProjectTreeView() {
+    resize_itm.style.width = '0px';
+    resizer_img.src="../../assets/images/expand-icon.png";
+}
 
 const mouseDoubleClick = function() {
     resize_itm.style.width = getComputedStyle(document.body).getPropertyValue('--default-project-view-width');

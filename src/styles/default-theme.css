@@ -356,21 +356,34 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
   height: 16px;
   width: calc(100% - 16px);
   flex-grow: 0;
-  overflow: hidden;
   display: flex;
   justify-content: start;
   align-items: center;
   user-select: none;
-  overflow-y: hidden;
   overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-gutter: 2px;
+}
+#breadcrumbs::-webkit-scrollbar {
+  height: 2px;
+  background-color: var(--color-dark);
+}
+#breadcrumbs::-webkit-scrollbar-thumb {
+  background-color: var(--color-base);
+}
+#breadcrumbs:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-light);
 }
 
 .breadcrumbs-text {
   max-width: 256px;
-  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden; 
+  flex: 0 0 auto;
   padding-left: 6px;
   padding-right: 6px;
   color: var(--color-text);
+  white-space: nowrap;
 }
 .breadcrumbs-text:hover {
   color: var(--color-text-highlight);
