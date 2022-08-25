@@ -1,10 +1,22 @@
 
 /*
 IMPORTANT! Main dev(https://github.com/gibberishdev) that worked on this file has DYSLEXIA!
-That means that if you see smth that can be named, described and what not better than you see,
+That means that if you see smth that can be named, described and what not better than written,
 PLEASE, I BEG YOU, open a pull request on github to fix that stuff >.>
 */
 
+/* IMPORTS */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../../assets/fonts/material-icons.woff2") format("woff2"), url("../../assets/fonts/material-icons.woff") format("woff");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-feature-settings: "liga";
+}
 
 /*Variables for theme.
 AKA if ya want to recolour the app just change colors inside here and leave other values as is*/
@@ -73,7 +85,6 @@ I know, shocking */
 
   user-select: none;
   pointer-events: none;
-  user-select: none;
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
@@ -255,10 +266,59 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
 
 #sidebar {
   background-color: var(--color-light);
-  width: 48px;
-  max-width: 48px;
-  min-width: 48px;
+  width: 64px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
 }
+
+#sidebar-button-container {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar-button {
+  background-color: var(--color-light);
+  height: 48px;
+  width: 48px;
+  color: var(--color-text);
+  font-size: 32px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 250ms;
+  user-select: none;
+  cursor: pointer;
+}
+.sidebar-button:hover {
+  color: var(--color-text-highlight);
+  font-size: 40px;
+}
+.sidebar-button.selected {
+  font-size: 40px;
+  color: var(--color-text-highlight);
+}
+
+#sidebar-gutter {
+  width: 16px;
+}
+#sidebar-gutter-selected {
+  color: var(--color-text-highlight);
+  height: 48px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+#sidebar-gutter-spacer{
+  height: 0px;
+  transition: 250ms cubic-bezier(.45,0,.45,1.5);
+}
+
 
 #project-tree-view{
   background-color: var(--color-darkest);

@@ -49,12 +49,23 @@
                 </div>
             </div>
             <div class="label">%project-name% - Jigsaw</div>
-            <div class="minimize-button" id="minimize"><img src="../../assets/images/minimize-btn.png" alt="minimize"></div>
-            <div class="maximize-button" id="maximize"><img src="../../assets/images/maximize-btn.png" alt="maximize"></div>
-            <div class="close-button" id="close"><img src="../../assets/images/close-btn.png" alt="close"></div>
+            <div class="minimize-button material-icons" id="minimize">minimize</div>
+            <div class="maximize-button material-icons" id="maximize">crop_square</div>
+            <div class="close-button material-icons" id="close">close</div>
         </div>
         <div id="wrapper">
             <div id="sidebar">
+                <div id="sidebar-gutter">
+                    <div id="sidebar-gutter-spacer"></div>
+                    <div id="sidebar-gutter-selected" class="material-icons">arrow_forward_ios</div>
+                </div>
+                <div id="sidebar-button-container">
+                    <div class="sidebar-button material-icons selected" id="files-button">folder_open</div>
+                    <div class="sidebar-button material-icons" id="search-button">search</div>
+                    <div class="sidebar-button material-icons" id="datapack-preview-button">account_tree</div>
+                    <div class="sidebar-button material-icons" id="git-button">merge</div>
+                    <div class="sidebar-button material-icons" id="settings-button">settings</div>
+                </div>
             </div>
             <div id="project-tree-view">
             </div>
@@ -101,6 +112,7 @@
             <script src="../scripts/workspace-scripts/file-scroll-shadows.js" defer></script>
             <script src="../scripts/workspace-scripts/horizontal-scroll-container.js" defer></script>
             <script src="../scripts/workspace-scripts/project-view-resizer.js" defer></script>
+            <script src="../scripts/workspace-scripts/sidebar-selector.js" defer></script>
         </div>
     </body>
 </html>

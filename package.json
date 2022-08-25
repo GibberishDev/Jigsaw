@@ -5,7 +5,7 @@
   "main": "src/scripts/backend/main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . --ignore=/.vscode --ignore=/node_modules --ignore=.gitignore"
+    "package": "electron-packager . --ignore=/.vscode --ignore=/node_modules --ignore=.gitignore --asar"
   },
   "author": "GibbDev",
   "license": "GPL-3.0-or-later",
