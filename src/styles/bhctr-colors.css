@@ -1,0 +1,12 @@
+/*Colour variables for theme.*/
+:root {
+  /*BHCTR theme colors*/
+  /*BHCTR = Blue Honda Civic Type R*/
+  --color-darkest: #001030;
+  --color-dark: #002040;
+  --color-base: #004060;
+  --color-light: #005070;
+  --color-text: #a0d0d0;
+  --color-text-highlight: #ffffff;
+  --color-close-btn: #bf3030;
+}

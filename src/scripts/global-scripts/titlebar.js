@@ -1,19 +1,9 @@
-/*
-state of dropdown menu:
-  true - dropdown is open and will result in changing dropdowns on hovering other titlebar buttons
-  false - dropdown is hidden
-*/
-
 
 var dropdownState = false;
-var supressTitleBarClicks = false;
+var supressTitleBarClicks = false; //prevents click propagation up to the parent
 var hoveredButtons = [];
 var closeTiomeout;
 var openTimeout;
-
-function delay(time) {
-  
-}
 
 function openMenu(parent, otherButtons) {
   supressTitleBarClicks = true
@@ -75,7 +65,7 @@ function buttonHoverOffHandler(button, otherButtons) {
   }
 }
 
-function connectEvents() {
+function connectDropdownButtonsEvents() {
   var buttons = document.getElementsByClassName('titlebar-button');
   Array.prototype.slice.call(buttons).forEach(
     function(button) {
@@ -88,5 +78,15 @@ function connectEvents() {
     });
 }
 
+connectDropdownButtonsEvents();
 
-connectEvents();
+const closeButton = document.getElementById('close');
+const minimizeButton = document.getElementById('minimize');
+const maximizeButton = document.getElementById('maximize');
+const maximizeImage = document.getElementById('maximize-image');
+
+var isMaximized = false;
+
+closeButton.addEventListener('click', () => api.window.close());
+minimizeButton.addEventListener('click', () => api.window.minimize());
+maximizeButton.addEventListener('click', () => api.window.maximize());

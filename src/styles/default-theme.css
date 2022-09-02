@@ -5,6 +5,10 @@ That means that if you see smth that can be named, described and what not better
 PLEASE, I BEG YOU, open a pull request on github to fix that stuff >.>
 */
 
+:root {
+  --default-project-view-width: 256px;
+}
+
 /* IMPORTS */
 @font-face {
   font-family: "Material Icons";
@@ -16,24 +20,6 @@ PLEASE, I BEG YOU, open a pull request on github to fix that stuff >.>
 .material-icons {
   font-family: "Material Icons";
   font-feature-settings: "liga";
-}
-
-/*Variables for theme.
-AKA if ya want to recolour the app just change colors inside here and leave other values as is*/
-:root {
-  /*BHCTR theme colors*/
-  /*BHCTR = Blue Honda Civic Type R*/
-  --color-darkest: #001030; /*Default #001030*/
-  --color-dark: #002040; /*Default #002040*/
-  --color-base: #004060; /*Default #004060*/
-  --color-light: #005070; /*Default #005070*/
-
-  --color-text: #a0d0d0; /*Default #a0d0d0*/
-  --color-text-highlight: #ffffff; /*Default #ffffff*/
-
-  --color-close-btn: #bf3030; /*Default #bf3030*/
-
-  --default-project-view-width: 256px; /*Default 256px*/
 }
 
 @font-face {
@@ -486,133 +472,3 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
 }
 /* END OF WORKSPACE STYLING */
 
-/* PROJECT VIEW STYLING
-Holds styling for screen for project selection screen
-Obviously inspired by blockbench >.> */
-
-/* Container ofr project view content */
-#project-view-scroll-container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  max-height: 95%;
-  width: 100%;
-  background-color: transparent;
-  overflow-y: auto;
-}
-#project-view-scroll-container::-webkit-scrollbar {
-  width: 8px;
-}
-#project-view-scroll-container::-webkit-scrollbar-track {
-  color: transparent;
-}
-#project-view-scroll-container::-webkit-scrollbar-thumb {
-  width: 8px;
-  border-radius: 4px;
-  background-color: var(--color-base);
-}
-#project-view-scroll-container::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-light);
-}
-
-#project-view-sections {
-  height: 95%;
-  width: 'determined by script';
-  margin: auto;
-  display: grid;
-  grid-template-columns: 256px auto;
-  grid-template-rows: min-content auto;
-}
-
-/* banner image container */
-#banner {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  background-color: var(--color-light);
-  height: 300px;
-  transition: 100ms;
-  transition-timing-function: ease-in;
-  overflow: hidden;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-}
-
-#options-container {
-  height: auto;
-}
-
-#project-list {
-  background-color: var(--color-base);
-  border-bottom-right-radius: 32px;
-  user-select: none;
-}
-
-.project-list-label {
-  color: var(--color-text);
-  font-family: 'Nova Square';
-  font-size: 20px;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-#project-list-recent {
-  display: grid;
-  grid-template-columns: 'determined by script';
-  grid-auto-rows: 240px;
-}
-
-#project-list-pinned {
-  display: grid;
-  grid-template-columns: 'determined by script';
-  grid-auto-rows: 240px;
-}
-
-.project-card {
-  margin: auto;
-  background-color: var(--color-base);
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-  box-sizing: border-box;
-  border: solid 2px var(--color-darkest);
-  height: 192px;
-  width: 128px;
-  transition: 250ms;
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  user-select: none;
-  cursor: pointer;
-}
-.project-card:hover {
-  height: 240px;
-  width: 160px;
-  border: solid 2px var(--color-text);
-  color: var(--color-text-highlight);
-}
-.project-card img {
-  width: 100%;
-  image-rendering: pixelated;
-}
-
-.project-card-content {
-  height: 100%;
-  font-size: 14px;
-  font-family: 'NovaSquareRegular';
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card-text {
-  margin-top: 2px;
-  flex-grow: 1;
-}
-/* END OF PROJECT VIEW STYLING */
-
-/* DUD FILE FOR DEVELOPMENT PUTPOSES ONLY. WILL DISAPPEAR AS SOON AS IT IS NOT NEEDED ANYMORE >:D */
-#file {
-  color: var(--color-text);
-  height: 200%;
-}
