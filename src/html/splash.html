@@ -10,15 +10,89 @@
       background-color: var(--color-dark);
       margin: auto;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 393px;
       width: 512px;
       border-radius: 32px;
     }
+    #loading-spinner {
+      height: 44px;
+      width: 44px;
+      display: grid;
+      margin-top: 16px;
+      grid-template-columns: 16px 16px 16px;
+      grid-template-rows: 16px 16px 16px;
+      row-gap: 4px;
+      column-gap: 4px;
+    }
+    .empty {
+      background-color: transparent;
+    }
+    .square-1 {
+      border-radius: 4px;
+      background-color: white;
+      animation: square-1 0.5s infinite;
+    }
+    .square-2 {
+      border-radius: 4px;
+      background-color: white;
+      animation: square-2 0.5s infinite;
+    }
+    .square-3 {
+      border-radius: 4px;
+      background-color: white;
+      animation: square-3 0.5s infinite;
+    }
+    .square-4 {
+      border-radius: 4px;
+      background-color: white;
+      animation: square-4 0.5s infinite;
+    }
+    /* #------- */
+    @keyframes square-1 {
+      0% {opacity: 100%;}
+      25% {opacity: 0%;}
+      75% {opacity: 0%;}
+      100% {opacity: 100%;}
+    }
+    @keyframes square-2 {
+      0% {opacity: 0%;}
+      25% {opacity: 100%;}
+      50% {opacity: 0%;}
+      100% {opacity: 0%;}
+    }
+    @keyframes square-3 {
+      0% {opacity: 0%;}
+      25% {opacity: 0%;}
+      50% {opacity: 100%;}
+      75% {opacity: 0%;}
+      100% {opacity: 0%;}
+    }
+    @keyframes square-4 {
+      0% {opacity: 0%;}
+      50% {opacity: 0%;}
+      75% {opacity: 100%;}
+      100% {opacity: 0%;}
+    }
   </style>
 </head>
 <body>
-  <div class="img-container"><img src="../../assets/images/code_cube.svg" alt="Jigsaw" style="height: 128px;"></div>
+  <div class="img-container">
+    <img src="../../assets/images/code_cube.svg" alt="Jigsaw" style="height: 128px;">
+    <div id="loading-spinner">
+      <div class="square-1"></div>
+      <div class="square-2"></div>
+      <div class="square-3"></div>
+      <div class="square-4"></div>
+      <div class="empty"></div>
+      <div class="square-4"></div>
+      <div class="square-3"></div>
+      <div class="square-2"></div>
+      <div class="square-1"></div>
+    </div>
+  </div>
+  
 </body>
 </html>
