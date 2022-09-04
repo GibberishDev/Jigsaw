@@ -12,6 +12,7 @@ app.on("ready", function(){
     height: 393, 
     transparent: true, 
     frame: false,
+    alwaysOnTop: true,
   });
   splash.loadFile('src/html/splash.html');
   splash.center();
@@ -36,6 +37,7 @@ app.on("ready", function(){
   setTimeout(function () {
     splash.close();
     mainWindow.show();
+    mainWindow.maximize();
   }, 5000);
 })
 

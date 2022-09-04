@@ -9,7 +9,7 @@ function openMenu(parent, otherButtons) {
   supressTitleBarClicks = true
   dropdownState = true;
   var menu = parent.getElementsByClassName('dropdown-container')[0];
-  menu.style.top = `${parent.getBoundingClientRect().bottom}px`;
+  menu.style.top = `${parent.getBoundingClientRect().bottom - parseInt(getComputedStyle(parent).getPropertyValue("border-bottom-width"))}px`;
   menu.style.left = `${parent.getBoundingClientRect().left}px`;
   menu.style.display = 'flex';
   otherButtons.forEach(function(btn) {btn.getElementsByClassName('dropdown-container')[0].style.display = 'none'});

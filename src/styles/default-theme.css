@@ -5,11 +5,26 @@ That means that if you see smth that can be named, described and what not better
 PLEASE, I BEG YOU, open a pull request on github to fix that stuff >.>
 */
 
+
+/* TODO: REMOVE THIS ON PUBLISH
+:root {
+  BHCTR theme colors
+  BHCTR = Blue Honda Civic Type R
+  --color-darkest: #001030;
+  --color-dark: #002040;
+  --color-base: #004060;
+  --color-light: #005070;
+  --color-text: #a0d0d0;
+  --color-text-highlight: #ffffff;
+  --color-close-btn: #bf3030;
+} */
+
 :root {
   --default-project-view-width: 256px;
 }
 
 /* IMPORTS */
+
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -227,11 +242,87 @@ I know, shocking */
 }
 /* /\ End of titlebar elements /\ */
 
+/* \/ Start of tab container styling \/ */
+#project-tabs-container {
+  height: 24px;
+  background-color: var(--color-base);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.project-tab {
+  user-select: none;
+  height: 24px;
+  width: 256px;
+  box-sizing: border-box;
+  border-left: solid var(--color-darkest) 1px;
+  border-right: solid var(--color-darkest) 1px;
+  color: var(--color-text);
+  font-family: 'Nova Square';
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.project-tab {
+  user-select: none;
+  height: 24px;
+  width: 256px;
+  box-sizing: border-box;
+  border-left: solid var(--color-darkest) 1px;
+  border-right: solid var(--color-darkest) 1px;
+  background-color: var(--color-base);
+  font-family: 'Nova Square';
+  color: var(--color-text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  transition: 150ms linear;
+}
+.project-tab:hover {
+  color: var(--color-text-highlight);
+}
+.project-tab-label {
+  flex-grow: 1;
+  text-align: center;
+}
+.project-tab-close {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin-right: 2px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-tab:hover .project-tab-close {
+  background-color: var(--color-light);
+}
+.project-tab-add {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  color: var(--color-text);
+  border: solid var(--color-base) 2px;
+  border-radius: 4px;
+  user-select: none;
+}
+.project-tab-add:hover {
+  background-color: var(--color-light);
+}
+/* /\ End of tab container styling /\ */
+
 /* Wrapper
 Houses all the content and usually visible only as background.
 Used to give size to content inside of it*/
 #wrapper{
-  height: calc(100vh - 60px);
+  height: calc(100vh - 76px);
   background-color: var(--color-darkest);
   display: flex;
 }
@@ -380,6 +471,7 @@ TODO: Add description for all the stuff that will be displayed in statusbar */
   color: var(--color-text);
   font-family: 'NovaSquareRegular';
   user-select: none;
+  transition: 150ms linear;
 }
 .tab:hover {
   background-color: var(--color-base);
